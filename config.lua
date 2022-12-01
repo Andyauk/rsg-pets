@@ -28,7 +28,3 @@ Config.PetShopLocations = {
 
 	{name = 'Valentine Pet Shop',	shopname = 'valentine-pets', coords = vector3(-360.5724, 784.24835, 116.15647),	showblip = true},
 }
-
-Config.PetShopNpc = {
-	[1] = { ["Model"] = "A_F_M_BTCObeseWomen_01", ["Pos"] = vector3(-360.5724, 784.24835, 116.15647 -1), ["Heading"] = 267.53536 }, -- pets valentine
-}

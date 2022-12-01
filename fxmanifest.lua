@@ -8,8 +8,7 @@ description 'rsg-pets'
 client_scripts {
 	'client/client.lua',
 	'client/dog.lua',
-	'client/func.lua',
-	'client/npc.lua'
+	'client/func.lua'
 }
 
 server_scripts {
