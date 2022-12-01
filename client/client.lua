@@ -12,8 +12,21 @@ Citizen.CreateThread(function()
             local StoreBlip = N_0x554d9d53f696d002(1664425300, v.coords)
             SetBlipSprite(StoreBlip, Config.Blip.blipSprite, 1)
             SetBlipScale(StoreBlip, Config.Blip.blipScale)
-			Citizen.InvokeNative(0x9CB1A1623062F402, StoreBlip, Config.Blip.blipName)
+            Citizen.InvokeNative(0x9CB1A1623062F402, StoreBlip, Config.Blip.blipName)
         end
+    end
+end)
+
+-- draw marker if set to true in config
+CreateThread(function()
+    while true do
+        local sleep = 0
+        for pets, v in pairs(Config.PetShopLocations) do
+            if v.showmarker == true then
+                Citizen.InvokeNative(0x2A32FAA57B937173, 0x07DCE236, v.coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 255, 215, 0, 155, false, false, false, 1, false, false, false)
+            end
+        end
+        Wait(sleep)
     end
 end)
 
@@ -29,241 +42,241 @@ end)
 -- call foxhound
 RegisterNetEvent("rsg-pets:client:callfoxhound")
 AddEventHandler("rsg-pets:client:callfoxhound", function()
-	local hasItem = QRCore.Functions.HasItem('foxhound', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogAmericanFoxhound_01"
-			local name = "foxhound"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('foxhound', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogAmericanFoxhound_01"
+            local name = "foxhound"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call sheperd
 RegisterNetEvent("rsg-pets:client:callsheperd")
 AddEventHandler("rsg-pets:client:callsheperd", function()
-	local hasItem = QRCore.Functions.HasItem('sheperd', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogAustralianSheperd_01"
-			local name = "sheperd"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('sheperd', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogAustralianSheperd_01"
+            local name = "sheperd"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call coonhound
 RegisterNetEvent("rsg-pets:client:callcoonhound")
 AddEventHandler("rsg-pets:client:callcoonhound", function()
-	local hasItem = QRCore.Functions.HasItem('coonhound', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogBluetickCoonhound_01"
-			local name = "coonhound"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('coonhound', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogBluetickCoonhound_01"
+            local name = "coonhound"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call catahoulacur
 RegisterNetEvent("rsg-pets:client:callcatahoulacur")
 AddEventHandler("rsg-pets:client:callcatahoulacur", function()
-	local hasItem = QRCore.Functions.HasItem('catahoulacur', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogCatahoulaCur_01"
-			local name = "catahoulacur"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('catahoulacur', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogCatahoulaCur_01"
+            local name = "catahoulacur"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call bayretriever
 RegisterNetEvent("rsg-pets:client:callbayretriever")
 AddEventHandler("rsg-pets:client:callbayretriever", function()
-	local hasItem = QRCore.Functions.HasItem('bayretriever', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogChesBayRetriever_01"
-			local name = "bayretriever"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('bayretriever', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogChesBayRetriever_01"
+            local name = "bayretriever"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call collie
 RegisterNetEvent("rsg-pets:client:callcollie")
 AddEventHandler("rsg-pets:client:callcollie", function()
-	local hasItem = QRCore.Functions.HasItem('collie', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogCollie_01"
-			local name = "collie"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('collie', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogCollie_01"
+            local name = "collie"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call hound
 RegisterNetEvent("rsg-pets:client:callhound")
 AddEventHandler("rsg-pets:client:callhound", function()
-	local hasItem = QRCore.Functions.HasItem('hound', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogHound_01"
-			local name = "hound"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('hound', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogHound_01"
+            local name = "hound"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call husky
 RegisterNetEvent("rsg-pets:client:callhusky")
 AddEventHandler("rsg-pets:client:callhusky", function()
-	local hasItem = QRCore.Functions.HasItem('husky', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogHusky_01"
-			local name = "husky"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('husky', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogHusky_01"
+            local name = "husky"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call lab
 RegisterNetEvent("rsg-pets:client:calllab")
 AddEventHandler("rsg-pets:client:calllab", function()
-	local hasItem = QRCore.Functions.HasItem('lab', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogLab_01"
-			local name = "lab"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('lab', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogLab_01"
+            local name = "lab"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call poodle
 RegisterNetEvent("rsg-pets:client:callpoodle")
 AddEventHandler("rsg-pets:client:callpoodle", function()
-	local hasItem = QRCore.Functions.HasItem('poodle', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogPoodle_01"
-			local name = "poodle"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('poodle', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogPoodle_01"
+            local name = "poodle"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)
 
 -- call street
 RegisterNetEvent("rsg-pets:client:callstreet")
 AddEventHandler("rsg-pets:client:callstreet", function()
-	local hasItem = QRCore.Functions.HasItem('street', 1)
-	if hasItem then
-		if petout == false then
-			local model = "A_C_DogStreet_01"
-			local name = "street"
-			doggo = newDoggo(model, name)
-			petout = true
-			doggo.whistle()
-			Wait(Config.whistle_wait)
-		else
-			doggo.delete()
-			petout = false
-			QRCore.Functions.Notify('sent your dog to the kennel', 'success')
-		end
-	else
-		QRCore.Functions.Notify('you don\'t have this pet!', 'error')
-	end
+    local hasItem = QRCore.Functions.HasItem('street', 1)
+    if hasItem then
+        if petout == false then
+            local model = "A_C_DogStreet_01"
+            local name = "street"
+            doggo = newDoggo(model, name)
+            petout = true
+            doggo.whistle()
+            Wait(Config.whistle_wait)
+        else
+            doggo.delete()
+            petout = false
+            QRCore.Functions.Notify('sent your dog to the kennel', 'success')
+        end
+    else
+        QRCore.Functions.Notify('you don\'t have this pet!', 'error')
+    end
 end)

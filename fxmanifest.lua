@@ -6,17 +6,17 @@ author 'RexShack#3041'
 description 'rsg-pets'
 
 client_scripts {
-	'client/client.lua',
-	'client/dog.lua',
-	'client/func.lua'
+    'client/client.lua',
+    'client/dog.lua',
+    'client/func.lua'
 }
 
 server_scripts {
-	'server/server.lua',
+    'server/server.lua',
 }
 
 shared_scripts {
-	'config.lua'
+    'config.lua'
 }
 
 lua54 'yes'
