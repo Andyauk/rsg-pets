@@ -26,5 +26,5 @@ Config.PetShop = {
 
 Config.PetShopLocations = {
 
-    {name = 'Valentine Pet Shop', shopname = 'valentine-pets', coords = vector3(-360.5724, 784.24835, 116.15647), showblip = true, showmarker = true },
+    {name = 'Valentine Pet Shop', shopname = 'valentine-pets', coords = vector3(-360.5724, 784.24835, 116.15647), showblip = true},
 }
