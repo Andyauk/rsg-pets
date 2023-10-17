@@ -32,7 +32,7 @@ function newDoggo(model,name)
     Citizen.CreateThread(function()
         while not object.spawned do
             Wait(100)
-            print("loading pet : " .. object.model)
+            --print("loading pet : " .. object.model)
             local pedModel = GetHashKey(object.model)
             while not HasModelLoaded(pedModel) do
                 modelrequest(pedModel)
