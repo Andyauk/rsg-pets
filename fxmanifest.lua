@@ -1,22 +1,25 @@
 fx_version 'cerulean'
-rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 game 'rdr3'
+rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
+lua54 'yes'
 
-author 'RexShack#3041'
-description 'rsg-pets'
+name 'rsg-pets'
+version '1.0.0'
+author 'RexShack#3041, Percxis (Bouh)'
+description 'ajoute la possibilité d\'acheter des animaux.'
+
+shared_scripts {
+    'shared/*.lua',
+}
 
 client_scripts {
-    'client/client.lua',
-    'client/dog.lua',
-    'client/func.lua'
+    'client/*.lua',
 }
 
 server_scripts {
-    'server/server.lua',
+    'server/*.lua',
 }
 
-shared_scripts {
-    'config.lua'
+dependencies {
+    'rsg-core',
 }
-
-lua54 'yes'
