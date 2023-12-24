@@ -40,9 +40,9 @@ AddEventHandler("rsg-pets:client:call", function(petName, pedKey)
         else
             doggo.delete()
             petout = false
-            RSGCore.Functions.Notify('sent your dog to the kennel', 'success')
+            lib.notify({ title = '🦊', description = 'sent your dog to the kennel', type = 'success', duration = 5000 })
         end
     else
-        RSGCore.Functions.Notify('you don\'t have this pet!', 'error')
+        lib.notify({ title = '🐺', description = 'you don\'t have this pet!', type = 'error', duration = 5000 })
     end
 end)

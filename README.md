@@ -1,5 +1,6 @@
 # RexshackGaming
 - discord : https://discord.gg/s5uSk56B65
+- youtube : https://www.youtube.com/channel/UCikEgGfXO-HCPxV5rYHEVbA
 - github : https://github.com/Rexshack-RedM
 
 # Dependancies
